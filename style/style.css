@@ -71,8 +71,15 @@ aside form button {
   border: 2px solid #009DD6;
   border-radius: 1em;
   height: 1.8em;
-  color: black;
+  color: #009DD6;
   background-color: white;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  transition-property: color, background-color;
+}
+aside form button:hover {
+  color: white;
+  background-color: #009DD6;
 }
 aside form .submit {
   width: 80%;
@@ -124,6 +131,12 @@ section {
   height: 1em;
   width: 1em;
   cursor: pointer;
+  transition-duration: 0.5s;
+  transition-property: color, background-color;
+}
+.left-button:hover,
+.right-button:hover {
+  color: #009DD6;
 }
 .left-button {
   margin: 0 2em 0 2em;

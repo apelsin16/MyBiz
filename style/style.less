@@ -73,7 +73,7 @@ aside {
             flex-direction: row;
             align-items: baseline;
             justify-content: space-around;
-            flex-wrap: wrap;        
+            flex-wrap: wrap;
         }
 
         button {
@@ -82,8 +82,17 @@ aside {
 
             height:1.8em;
 
-            color:black;
+            color:#009DD6;
             background-color:white;
+            .pointer;
+            
+            transition-duration: 0.5s;
+            transition-property: color, background-color;
+
+            &:hover {
+                color:white;
+                background-color:#009DD6;
+            }
         }
 
         .submit {
@@ -140,6 +149,13 @@ section {
     width:1em;
 
     .pointer;
+    
+    transition-duration: 0.5s;
+    transition-property: color, background-color;
+
+    &:hover {
+        color:#009DD6;
+    }
 }
 
 .left-button {
