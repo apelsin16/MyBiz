@@ -1,0 +1,62 @@
+.filesystem-header {
+    .flex-divs(row, space-around, center);
+    .size(5em, 100%);
+
+    border-bottom:2px solid black;
+
+    background-color:white;
+}
+
+.filesystem-logo { // Block with logo of site
+    .flex-divs(row, space-around, center);
+    .size(80%, 10%);
+    img {
+        .size(100%, auto);
+    }
+}
+
+.filesystem-header-buttons {
+    .flex-divs(row, space-around, center);
+    .size(80%, 20%);
+
+    .pointer;
+}
+
+.filesystem-profile {
+    .flex-divs(row, space-between, center);
+    .size(80%, 12%);
+    .profile-buttons {   
+        .flex-divs(column, space-around, center);
+        .size(100%, 10%);
+
+        .pointer;
+    }
+}
+
+.filesystem-section {
+    .size(85vh, 100%);
+}
+
+.filesystem-footer {
+    .flex-divs(row, space-around, center);
+    .size(5em, 100%);
+
+    border-top: 2px solid black;
+
+    nav {
+        .size(90%, 40%);
+        .flex-divs(row, space-around, center);
+        a {
+            .pointer;
+            text-align:center;
+        }
+    }
+
+    .social-links {
+        .size(90%, 30%);
+        .flex-divs(row, space-around, center);
+        i {
+            .pointer;
+        }
+    }
+}

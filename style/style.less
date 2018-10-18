@@ -1,5 +1,7 @@
 @import url("reset.css");
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('landing.less');
+@import url('filesystem.less');
 
 .size(@height:1em; @width:1em) {
     height:@height;
@@ -21,12 +23,6 @@ html, body {
     .size(100%, 100%);
 }
 
-header {
-    height: 1em;
-
-    background-color:#009DD6;
-}
-
 span,
 label,
 button {
@@ -36,134 +32,6 @@ button {
 span,
 label {
     font-size:1.3em;
-}
-
-aside {
-    .flex-divs(column, space-between, center);
-    width: 20%;
-    margin-left:2.5%;
-    float: left;
-
-    .main-logo {
-        overflow: hidden;
-        .size(17em, 60%);
-
-        img {
-            .size(100%, 100%);
-        }
-    }
-
-    form {
-        .flex-divs(column, space-between, baseline);
-
-        label,
-        input {
-            margin-bottom: 1em;
-        }
-
-        input {
-            border-radius: 1em;
-            padding-left:1em;
-            outline: none;
-            width:90%;
-        }
-
-        .reg-buttons {
-            display: flex;
-            flex-direction: row;
-            align-items: baseline;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        button {
-            border:2px solid #009DD6;
-            border-radius:1em;
-
-            height:1.8em;
-
-            color:#009DD6;
-            background-color:white;
-            .pointer;
-            
-            transition-duration: 0.5s;
-            transition-property: color, background-color;
-
-            &:hover {
-                color:white;
-                background-color:#009DD6;
-            }
-        }
-
-        .submit {
-            width:80%;
-            margin-bottom: 1em;
-        }
-
-        .new-register {
-            width: 80%;
-        }
-    }
-
-    hr {
-        .size(2px, 80%);
-        margin-top:3em;
-
-        color:black;
-    }
-
-
-    .invest,
-    .crowdfunding {
-        .flex-divs(row, space-around, center);
-        width: 50%;
-        margin-bottom:2em;
-        text-align: center;
-        vertical-align: middle;
-    }
-}
-
-section {
-    .size(98%, 77.5%);
-    .flex-divs(row, space-between, center);
-    margin-left: 2.5%;
-
-    background: linear-gradient(to top, #ffffff, #cccccc) no-repeat;
-}
-
-.container {
-    .size(90%, 80%);
-    margin: 3em 3em 3em 3.5em;
-
-    background-color: white;
-    overflow: hidden;
-
-    img {
-        .size(100%, 100%);
-    }
-}
-
-.left-button,
-.right-button {
-    height:1em;
-    width:1em;
-
-    .pointer;
-    
-    transition-duration: 0.5s;
-    transition-property: color, background-color;
-
-    &:hover {
-        color:#009DD6;
-    }
-}
-
-.left-button {
-    margin:0 2em 0 2em;
-}
-
-.right-button {
-    margin:0 2em 0 2em;
 }
 
 ::-webkit-scrollbar { /* Here is style for vertical scrollbar */
