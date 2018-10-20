@@ -1,7 +1,7 @@
 .landing-header {
     height: 1em;
 
-    background-color:#009DD6;
+    background-color: @main-color;
 }
 
 aside {
@@ -11,7 +11,7 @@ aside {
     float: left;
 
     .main-logo {
-        overflow: hidden;
+        .hidden;
         .size(17em, 60%);
 
         img {
@@ -43,12 +43,12 @@ aside {
         }
 
         button {
-            border:2px solid #009DD6;
+            border:2px solid @main-color;
             border-radius:1em;
 
             height:1.8em;
 
-            color:#009DD6;
+            color: @main-color;
             background-color:white;
             .pointer;
             
@@ -57,7 +57,7 @@ aside {
 
             &:hover {
                 color:white;
-                background-color:#009DD6;
+                background-color: @main-color;
             }
         }
 
@@ -102,7 +102,7 @@ aside {
     margin: 3em 3em 3em 3.5em;
 
     background-color: white;
-    overflow: hidden;
+    .hidden;
 
     img {
         .size(100%, 100%);
@@ -120,7 +120,7 @@ aside {
     transition-property: color, background-color;
 
     &:hover {
-        color:#009DD6;
+        color: @main-color;
     }
 }
 

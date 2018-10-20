@@ -2,9 +2,7 @@
     .flex-divs(row, space-around, center);
     .size(5em, 100%);
 
-    border-bottom:2px solid black;
-
-    background-color:white;
+    background-color: @main-color;
 }
 
 .filesystem-logo { // Block with logo of site
@@ -12,51 +10,190 @@
     .size(80%, 10%);
     img {
         .size(100%, auto);
+        border-radius: 1em;
+
+        background-color: white;
     }
 }
 
-.filesystem-header-buttons {
+.filesystem-header-buttons { // Buttons at header
     .flex-divs(row, space-around, center);
-    .size(80%, 20%);
+    .size(80%, 30%);
 
     .pointer;
+
+    a {
+        font-size: 1.1em;
+    }
+
+    i {
+        padding-left: 0.6em;
+    }
 }
 
-.filesystem-profile {
+.filesystem-profile { // Profile bar at header
     .flex-divs(row, space-between, center);
     .size(80%, 12%);
-    .profile-buttons {   
+
+    .profile-buttons {
         .flex-divs(column, space-around, center);
         .size(100%, 10%);
 
-        .pointer;
+        i {
+            padding: 0.2em;
+            
+            border: 2px solid black;
+            border-radius: 0.5em;       
+
+            .pointer;
+
+            &:hover {
+                color: white;
+                border-color: white;
+            }
+        }
     }
 }
 
-.filesystem-section {
-    .size(85vh, 100%);
+.filesystem-profile > i:first-of-type { // This style only for profile icon
+    border: 2px solid black;
+    border-radius: 1em;
+    padding: 0.2em;
 }
 
-.filesystem-footer {
+.filesystem-section { // Main section of filesystem
+    .size(85vh, 100%);
+
+    .hidden;
+
+    .filesystem-tabs { // Tabs of filesystem
+        margin: 0 auto;
+        .size(4em, 99%);
+        .flex-divs(row, flex-start, center);
+
+        background: @grey-gradient;
+
+        .tab { // Style for each tab
+            width: 15%;
+            margin-right: 0.4em;
+            padding: 1.1em 1em 0.8em; // Padding for making height of tab
+
+            .hidden;
+
+            background-color: white;
+            border: 1px solid black;
+
+            img,
+            span {
+                text-align: center;
+                margin-left: 1.5em;
+            }
+        }
+    }
+
+    .filesystem-container { // Container with filesystem main features
+        height: 100%;
+        .hidden;
+
+        .container-buttons { // Buttons at the top of filesystem
+            .size(4em, 100%);
+            .flex-divs(row, space-around, center);
+
+            background-color: @light-grey-color;
+
+            .container-button {
+                .pointer;
+
+                & i:hover {
+                    color: @main-color;
+                }
+            }
+        }
+
+        .container-path { // Path of filesystem
+            .size(3em, 100%);
+            .flex-divs(row, space-around, center);
+            border-bottom: 2px dashed black;
+        }
+
+        .container-navigator { // Main frame with directories and files
+            .flex-divs(row, space-around, center);
+            height: 80%;
+            flex-wrap: nowrap;
+
+            .navigator-aside { // Block of directories
+                width: 20%;
+                margin: 0 0 0 3%;
+            }
+
+            .navigator-main { // Block with files etc.
+                width:70%;
+                margin: 0 3% 0 2%;
+            }
+
+            .navigator-aside,
+            .navigator-main {
+                height: 90%;
+                padding: 1em 3em;
+
+                border-radius: 1em;
+
+                overflow: auto;
+                background-color: @navigator-color;
+            }
+        }
+    }
+}
+
+.filesystem-footer { // Footer
     .flex-divs(row, space-around, center);
     .size(5em, 100%);
 
     border-top: 2px solid black;
 
-    nav {
+    nav { // Important links at footer
         .size(90%, 40%);
         .flex-divs(row, space-around, center);
         a {
+            width: 9em;
+            padding: 0.6em 0.7em 0.6em 0;
+
             .pointer;
             text-align:center;
+
+            border-right: 2px solid black;
         }
     }
 
-    .social-links {
+    .social-links { // Social links at footer
         .size(90%, 30%);
         .flex-divs(row, space-around, center);
-        i {
+        i { // Icons of social links
+            .size(1.7em, 1.7em);
+            border-radius:1.7em;
+
+            background-color: @main-color;
             .pointer;
+            &:before {
+                position: relative;
+                left: 0.4em;
+                top: 0.55em;
+
+                color: white;
+            }
+        }
+
+    .social-links i:before:hover {
+        color: yellow;
+    }
+
+        .google-plus, // Need special left position for icons
+        .youtube {
+            i {
+                &:before {
+                    left:0.3em;
+                }
+            }
         }
     }
 }

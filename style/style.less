@@ -3,6 +3,13 @@
 @import url('landing.less');
 @import url('filesystem.less');
 
+@main-color: #009DD6;
+@navigator-color: beige;
+@dark-grey-color: rgb(222, 225, 230);
+@light-grey-color: lighten(@dark-grey-color, 5%);
+
+@grey-gradient: linear-gradient(to right, #ffffff, @dark-grey-color, #ffffff) no-repeat;
+
 .size(@height:1em; @width:1em) {
     height:@height;
     width:@width;
@@ -17,6 +24,10 @@
 
 .pointer {
     cursor:pointer;
+}
+
+.hidden {
+    overflow: hidden;
 }
 
 html, body {

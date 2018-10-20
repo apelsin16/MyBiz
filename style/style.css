@@ -134,8 +134,7 @@ aside .crowdfunding {
   align-items: center;
   height: 5em;
   width: 100%;
-  border-bottom: 2px solid black;
-  background-color: white;
+  background-color: #009DD6;
 }
 .filesystem-logo {
   display: flex;
@@ -148,6 +147,8 @@ aside .crowdfunding {
 .filesystem-logo img {
   height: 100%;
   width: auto;
+  border-radius: 1em;
+  background-color: white;
 }
 .filesystem-header-buttons {
   display: flex;
@@ -155,8 +156,14 @@ aside .crowdfunding {
   justify-content: space-around;
   align-items: center;
   height: 80%;
-  width: 20%;
+  width: 30%;
   cursor: pointer;
+}
+.filesystem-header-buttons a {
+  font-size: 1.1em;
+}
+.filesystem-header-buttons i {
+  padding-left: 0.6em;
 }
 .filesystem-profile {
   display: flex;
@@ -173,11 +180,101 @@ aside .crowdfunding {
   align-items: center;
   height: 100%;
   width: 10%;
+}
+.filesystem-profile .profile-buttons i {
+  padding: 0.2em;
+  border: 2px solid black;
+  border-radius: 0.5em;
   cursor: pointer;
+}
+.filesystem-profile .profile-buttons i:hover {
+  color: white;
+  border-color: white;
+}
+.filesystem-profile > i:first-of-type {
+  border: 2px solid black;
+  border-radius: 1em;
+  padding: 0.2em;
 }
 .filesystem-section {
   height: 85vh;
   width: 100%;
+  overflow: hidden;
+}
+.filesystem-section .filesystem-tabs {
+  margin: 0 auto;
+  height: 4em;
+  width: 99%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(to right, #ffffff, #dee1e6, #ffffff) no-repeat;
+}
+.filesystem-section .filesystem-tabs .tab {
+  width: 15%;
+  margin-right: 0.4em;
+  padding: 1.1em 1em 0.8em;
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid black;
+}
+.filesystem-section .filesystem-tabs .tab img,
+.filesystem-section .filesystem-tabs .tab span {
+  text-align: center;
+  margin-left: 1.5em;
+}
+.filesystem-section .filesystem-container {
+  height: 100%;
+  overflow: hidden;
+}
+.filesystem-section .filesystem-container .container-buttons {
+  height: 4em;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #edeef1;
+}
+.filesystem-section .filesystem-container .container-buttons .container-button {
+  cursor: pointer;
+}
+.filesystem-section .filesystem-container .container-buttons .container-button i:hover {
+  color: #009DD6;
+}
+.filesystem-section .filesystem-container .container-path {
+  height: 3em;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px dashed black;
+}
+.filesystem-section .filesystem-container .container-navigator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 80%;
+  flex-wrap: nowrap;
+}
+.filesystem-section .filesystem-container .container-navigator .navigator-aside {
+  width: 20%;
+  margin: 0 0 0 3%;
+}
+.filesystem-section .filesystem-container .container-navigator .navigator-main {
+  width: 70%;
+  margin: 0 3% 0 2%;
+}
+.filesystem-section .filesystem-container .container-navigator .navigator-aside,
+.filesystem-section .filesystem-container .container-navigator .navigator-main {
+  height: 90%;
+  padding: 1em 3em;
+  border-radius: 1em;
+  overflow: auto;
+  background-color: beige;
 }
 .filesystem-footer {
   display: flex;
@@ -197,8 +294,11 @@ aside .crowdfunding {
   align-items: center;
 }
 .filesystem-footer nav a {
+  width: 9em;
+  padding: 0.6em 0.7em 0.6em 0;
   cursor: pointer;
   text-align: center;
+  border-right: 2px solid black;
 }
 .filesystem-footer .social-links {
   height: 90%;
@@ -209,10 +309,30 @@ aside .crowdfunding {
   align-items: center;
 }
 .filesystem-footer .social-links i {
+  height: 1.7em;
+  width: 1.7em;
+  border-radius: 1.7em;
+  background-color: #009DD6;
   cursor: pointer;
+}
+.filesystem-footer .social-links i:before {
+  position: relative;
+  left: 0.4em;
+  top: 0.55em;
+  color: white;
+}
+.filesystem-footer .social-links .social-links i:before:hover {
+  color: yellow;
+}
+.filesystem-footer .social-links .google-plus i:before,
+.filesystem-footer .social-links .youtube i:before {
+  left: 0.3em;
 }
 .pointer {
   cursor: pointer;
+}
+.hidden {
+  overflow: hidden;
 }
 html,
 body {
