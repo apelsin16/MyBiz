@@ -2,12 +2,45 @@
     .flex-divs(row, space-around, center);
     .size(5em, 100%);
 
-    background-color: @main-color;
+    background-color: #f5f5f5;
+
+    .filesystem-search {
+        input {
+            padding-left: .5em;
+            border-radius: 1em;
+            outline: none;
+        }
+
+        .fa-search {
+            position: relative;
+            top: .1em;
+            right: 1.7em;
+
+            transition-property: color;
+            transition-duration: 0.5s;
+
+            .pointer; 
+
+            &:hover {
+                color: @main-color;
+            }
+        }
+    }
+
+    .filesystem-expand {
+        transition-property: color;
+        transition-duration: 0.5s;
+    }
+
+    .filesystem-expand:hover {
+        color: @main-color;
+        .pointer;
+    }
 }
 
 .filesystem-logo { // Block with logo of site
     .flex-divs(row, space-around, center);
-    .size(80%, 10%);
+    height: 80%;
     img {
         .size(100%, auto);
         border-radius: 1em;
@@ -18,26 +51,44 @@
 
 .filesystem-header-buttons { // Buttons at header
     .flex-divs(row, space-around, center);
-    .size(80%, 30%);
+    height: 80%;
 
     .pointer;
 
-    a {
-        font-size: 1.1em;
-    }
-
     i {
         padding-left: 0.6em;
+    }
+
+    .header-buttons {
+        .flex-divs(row, center, center);
+        width: 80%;
+
+        font-size: 1.3em;
+        overflow: hidden;
+
+        transition-property: color, border-color;
+        transition-duration: 0.5s;
+        a {
+            padding-left: .5em;
+            font-family: "Roboto", sans-serif;
+            color: black;
+            text-decoration: none;
+        }
+    }
+
+    .header-buttons:hover {
+        color: @main-color;
     }
 }
 
 .filesystem-profile { // Profile bar at header
     .flex-divs(row, space-between, center);
-    .size(80%, 12%);
+    height: 80%;
 
     .profile-buttons {
         .flex-divs(column, space-around, center);
         .size(100%, 10%);
+        margin-right: 1em;
 
         i {
             padding: 0.2em;
@@ -47,9 +98,12 @@
 
             .pointer;
 
+            transition-property: color, border-color;
+            transition-duration: 0.5s;
+
             &:hover {
-                color: white;
-                border-color: white;
+                color: @main-color;
+                border-color: @main-color;
             }
         }
     }
@@ -61,14 +115,18 @@
     padding: 0.2em;
 }
 
+.profile-number {
+    padding-right: 1em;
+}
+
 .filesystem-section { // Main section of filesystem
     .size(85vh, 100%);
 
-    .hidden;
+    overflow: auto;
 
     .filesystem-tabs { // Tabs of filesystem
         margin: 0 auto;
-        .size(4em, 99%);
+        .size(4.5em, 99%);
         .flex-divs(row, flex-start, center);
 
         background: @grey-gradient;
@@ -80,8 +138,7 @@
 
             .hidden;
 
-            background-color: white;
-            border: 1px solid black;
+            background-color: @dark-grey-color;
 
             img,
             span {
@@ -89,57 +146,199 @@
                 margin-left: 1.5em;
             }
         }
+
+        .active {
+            background-color: white;
+        }
     }
 
     .filesystem-container { // Container with filesystem main features
-        height: 100%;
-        .hidden;
+        height: 79.9%;
+        
 
         .container-buttons { // Buttons at the top of filesystem
             .size(4em, 100%);
-            .flex-divs(row, space-around, center);
+            .flex-divs(row, flex-start, center);
 
             background-color: @light-grey-color;
 
             .container-button {
                 .pointer;
-
-                & i:hover {
-                    color: @main-color;
-                }
+                margin-left: 3%;
+            }
+                
+            .settings {
+                margin-left: 30%;
             }
         }
 
         .container-path { // Path of filesystem
             .size(3em, 100%);
             .flex-divs(row, space-around, center);
-            border-bottom: 2px dashed black;
+            border-bottom: 2px solid @light-grey-color;
+
+            .path-arrows {
+                width: 5%;
+                margin: 0 2%;
+                text-align: center;
+                .pointer;
+                
+                img {
+                    .size(1.5em, auto);
+
+                    &:nth-child(3) {
+                        .size(.5em, auto);
+                        margin-bottom: .5em;
+                    }
+
+                    &::nth-child(4) {
+                        .size(2em, auto);
+                    }
+                }
+            }
+
+            .path-input {
+                width: 65%;
+            }
+
+            .path-input-refresh {
+                .size(1.5em, auto);
+                position: relative;
+                right: 7%;
+
+                .pointer;
+            }
+            
+            .path-search {
+                width: 15%;
+            }
+
+            .path-input,
+            .path-search {
+                margin-right: 5%;
+                outline: none;
+                border-radius: 1em;
+            }
+
+
+            .path-search-icon {
+                position: relative;
+                right: 6.5em;
+                transition-property: color;
+                transition-duration: 0.5s;
+
+                .pointer; 
+
+                &:hover {
+                    color: @main-color;
+                }
+            }
         }
 
         .container-navigator { // Main frame with directories and files
-            .flex-divs(row, space-around, center);
-            height: 80%;
+            .flex-divs(row, flex-start, flex-start);
+            height: 100%;
             flex-wrap: nowrap;
+            background-color: @light-grey-color;
 
             .navigator-aside { // Block of directories
                 width: 20%;
-                margin: 0 0 0 3%;
+                margin: 0 1%;
+                .root-directory {
+                    font-size: 1.5em;
+                    
+                    &:before {
+                        content: url("../images/icons/directory-icon.png");
+                        position: relative;
+                        top: 0.5em;
+                    }
+                }
+
+                li {
+                    font-size: 1.1em;
+                }
+                .deep-dirs > li { // Directories that deeper than root
+                    margin-left: 0.1em;
+                    padding: 0 0 0 1em;
+
+                    .pointer;
+
+                    &:hover {
+                        color: @main-color;
+                    }
+
+                    &:before {
+                        content: url("../images/icons/directory-icon.png");
+                        position: relative;
+                        top: 0.5em;
+                    }
+                }
             }
 
             .navigator-main { // Block with files etc.
-                width:70%;
-                margin: 0 3% 0 2%;
+                .flex-divs(row, space-around, flex-start);
+                width: 77%;
             }
 
             .navigator-aside,
             .navigator-main {
-                height: 90%;
+                height: 97%;
+                margin-top: .5%;
                 padding: 1em 3em;
 
                 border-radius: 1em;
 
                 overflow: auto;
-                background-color: @navigator-color;
+                background-color: white;
+
+                .filename {
+                    width: 40%;
+                }
+
+                .filetype {
+                    width: 25%;
+                }
+
+                .user {
+                    width: 30%;
+                }
+
+                .filename li,
+                .creating-date li,
+                .filetype li,
+                .user li {
+                    text-align: center;
+                    font-size: 1.2em;
+                    border-bottom: 1px solid @transp-black;
+                    margin-bottom: 0.2em;
+                }
+
+                .filename li {
+                    text-align: left;
+                    padding-left: 3em;
+                }
+
+                .columns {
+                    height: 100%;
+                    border-right: 1px solid @transp-black;
+
+                    &:last-child {
+                        border-right: none;
+                    }
+                }
+
+                .columns-name { // Labels for columns
+                    height: 3em;
+                    padding-top: .5em;
+                    margin-bottom: 1em;
+                    background-color: @dark-grey-color;
+
+                    text-align: center;
+
+                    b {
+                        font-size: 1.2em;
+                    }
+                }
             }
         }
     }
@@ -148,20 +347,29 @@
 .filesystem-footer { // Footer
     .flex-divs(row, space-around, center);
     .size(5em, 100%);
-
-    border-top: 2px solid black;
+    flex-wrap: wrap;
+    
+    background-color: #f5f5f5;
 
     nav { // Important links at footer
         .size(90%, 40%);
         .flex-divs(row, space-around, center);
         a {
             width: 9em;
-            padding: 0.6em 0.7em 0.6em 0;
+            padding: 0.6em 0.7em 0.6em 0.8em;
 
             .pointer;
             text-align:center;
 
-            border-right: 2px solid black;
+            font-size: 1.2em;
+
+            border-right: 2px solid #5098C3;
+
+            color: #5098C3;
+
+            &:hover {
+                color: black;
+            }
         }
     }
 
@@ -183,10 +391,6 @@
             }
         }
 
-    .social-links i:before:hover {
-        color: yellow;
-    }
-
         .google-plus, // Need special left position for icons
         .youtube {
             i {
@@ -196,4 +400,61 @@
             }
         }
     }
+}
+
+.hover-background-color {
+    background-color: white !important;
+}
+
+.hover-color {
+    color: @main-color !important;
+}
+
+.column-name-1 {
+    border-radius: 1em 0 0 1em;
+}
+
+.column-name-4 {
+    border-radius: 0 1em 1em 0;
+}
+
+.home-button img {
+    width: 75%;
+}
+
+.grids img {
+    width: 40%;
+}
+
+.file-control img {
+    width: 30%;
+
+    &:nth-child(2),
+    &:nth-child(3) {
+        width: 25%;
+    }
+}
+
+.copy-etc img {
+    width: 20%;
+    
+    &:nth-child(4) {
+        width: 15%;
+    }
+}
+
+.filter img {
+    width: 40%;
+}
+
+.navigator-search img {
+    width: 34%;
+}
+
+.tables img {
+    width: 40%;
+}
+
+.mail-user img {
+    width: 40%;
 }

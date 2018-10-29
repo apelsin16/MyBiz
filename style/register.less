@@ -1,0 +1,154 @@
+.register-header {
+    .flex-divs(row, flex-start, center);
+    .size(5em, 100%);
+
+    padding-left: 5%;
+
+    background-color: @main-color;
+}
+
+input:not([type="file"]) {
+        caret-color: @main-color;
+        border-color: lighten(@main-color, 10%);
+        border-style: solid;
+        outline: none;
+
+        transition-delay: 0.05s;
+        transition-duration: 0.3s;
+        transition-property: border-color;
+
+        &:hover {
+            border-color: @main-color;
+        }
+
+        &:focus {
+            border-color: lighten(@main-color, 5%);
+    }
+
+    .pointer;
+}
+
+.register-section {
+    min-height: 85vh;
+    width: 100%;
+
+    .register-main-heading { // Main heading for registration form
+        margin: 1em 0;
+
+        text-align: center;
+        font-size: 2em;
+        font-family: "Montserrat", sans-serif;
+        color: @main-color;
+    }
+
+    .register-main-inputs {
+        height: 5em;
+        margin-top: 2em;
+        .flex-divs(row, space-around, baseline);
+    }
+
+    .register-comment {
+        text-align: center;
+    }
+
+    .register-password-create {
+        height: 5em;
+        margin-top: 2em;
+        .flex-divs(row, space-around, baseline);
+    }
+
+    .register-captcha-block {
+        text-align: center;
+    }
+
+    .register-optional-fields {
+        height:3em;
+        margin-top: 2em;
+        text-align: center;
+
+        background-color: @main-color;
+
+        & h2 {
+            padding-top: .5em;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white;
+        }
+    }
+
+    .register-optional-inputs {
+        .flex-divs(row, space-around, center);
+        flex-wrap: wrap;
+
+        & div {
+            margin: 2em 0; // Margins between all divs with inputs
+        }
+
+        .optional-input-number,
+        .optional-input-email {
+            width: 50%;
+            text-align: center;
+        }
+
+        .pickers {
+            width: 100%;
+            text-align: center;
+        }
+
+        .optional-image-pick {
+            .flex-divs(row, space-evenly, center);
+
+            div {
+                .flex-divs(column, space-between, center);
+                height: 5em;
+            }
+
+            .optional-image {
+                height: 15em;
+            }
+        }
+    }
+
+    .register-buttons {
+        .flex-divs(row, center, center);
+        margin: 2em 0;
+
+        button { // Submitting registration and cancel
+            padding: .5em 1%;
+            color: lighten(@main-color, 5%);
+            border: 2px solid lighten(@main-color, 5%);
+            border-radius: 1em;
+        
+            text-align: center;
+        
+            font-size: 1.4em;
+            font-weight: bold;
+            
+        
+            background-color:white;
+        
+            transition-duration: 0.5s;
+            transition-delay: 0.1s;
+            transition-property: border-color, color;
+        
+            .pointer;
+        
+            &:hover {
+                color: @main-color;
+                border-color: @main-color;
+            }
+
+            &:first-child{
+                margin: 0 5em 0 0;
+            }
+        }
+    }
+}
+
+.register-footer { 
+    .flex-divs(row, space-around, center);
+    .size(5em, 100%);
+    flex-wrap: wrap;
+    
+    background-color: #f5f5f5;
+}

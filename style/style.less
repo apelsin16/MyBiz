@@ -1,12 +1,16 @@
 @import url("reset.css");
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto');
+
 @import url('landing.less');
 @import url('filesystem.less');
+@import url('register.less');
 
 @main-color: #009DD6;
-@navigator-color: beige;
+
 @dark-grey-color: rgb(222, 225, 230);
 @light-grey-color: lighten(@dark-grey-color, 5%);
+
+@transp-black: rgba(0, 0, 0, 0.250);
 
 @grey-gradient: linear-gradient(to right, #ffffff, @dark-grey-color, #ffffff) no-repeat;
 
@@ -43,6 +47,10 @@ button {
 span,
 label {
     font-size:1.3em;
+}
+
+b {
+    font-weight: bold;
 }
 
 ::-webkit-scrollbar { /* Here is style for vertical scrollbar */

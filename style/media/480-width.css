@@ -10,4 +10,19 @@
   aside {
     width: 100%;
   }
+  .filesystem-expand {
+    display: none;
+  }
+  .filesystem-search {
+    display: none;
+  }
+  .filesystem-footer .social-links {
+    width: 80%;
+  }
+  .filesystem-footer nav {
+    width: 80%;
+  }
+  .filesystem-section .filesystem-container .container-buttons {
+    height: 10em;
+  }
 }

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MyBiz Filesystem</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../images/myBiz-logo.png" type="image/png" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="../style/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (min-width:240px)" href="../style//media/240-width.css" /> <!-- Between 240px and 479px -->
+    <link rel="stylesheet" type="text/css" media="screen and (min-width:480px)" href="../style/media/480-width.css" /> <!-- Between 480px and 720px -->
+    <link rel="stylesheet" type="text/css" media="screen and (min-width:1366px)" href="../style/media/1366-width.css" /> <!-- For screens bigger than 1366px -->
+
+</head>
+
+<body>
+    <header class="filesystem-header">
+        <div class="filesystem-logo">
+            <img src="../images/myBiz-logo-horisont.png"/>
+        </div>
+
+        <nav class="filesystem-header-buttons">
+                <div class="header-buttons">
+                    <img src="../images/icons/files.png" alt="File icon" />
+                    <a href="#" class="header-button files">
+                        Файлы и их оборот
+                    </a>
+                </div>
+
+                <div class="header-buttons">
+                    <img src="../images/icons/main-mail.png" alt="Mail icon">
+                    <a href="#" class="header-button mail">
+                    Почта
+                    </a>
+                </div>
+
+                <div class="header-buttons">
+                    <img src="../images/icons/register.png" alt="Register icon">
+                    <a href="#" class="header-button register">
+                        Регистрация и внесение изменений
+                    </a>
+                </div>
+        </nav>
+
+        <div class="filesystem-search">
+            <input type="text" placeholder="Поиск">
+            <i class="fas fa-search fa-lg"></i>
+        </div>
+
+        <div class="filesystem-profile">
+            <img class="user-image" src="../images/icons/user-image-icon.png" />
+            <span class="profile-number">+380638865888</span>
+
+            <div class="profile-buttons">
+                <img class="settings-button" src="../images/icons/settings-icon.png" />
+                <img class="on-off-button" src="../images/icons/onn-off-icon.png" />
+            </div>
+        </div>
+
+        <div class="filesystem-expand">
+            <img src="../images/icons/expand-icon.png" alt="Expand icon" class="expand-image" />
+        </div>
+    </header>
+
+    <section class="filesystem-section">
+        <nav class="filesystem-tabs">
+            <div class="tab active">
+                <img src="#" />
+                <span>+380638865888</span>
+            </div>
+
+            <div class="tab">
+                <img src="#" />
+                <span>+380638865888</span>
+            </div>
+        </nav>
+
+        <div class="filesystem-container">
+            <div class="container-buttons">
+                <div class="container-button home-button">
+                    <img src="../images/icons/home.png" alt="Home button">
+                </div>
+
+                <div class="container-button grids">
+                    <img src="../images/icons/grid-1.png" alt="Grid button">
+                    <img src="../images/icons/grid-2.png" alt="Grid button">
+                </div>
+
+                <div class="container-button file-control">
+                    <img src="../images/icons/directory-plus.png" alt="Directory plus button">
+                    <img src="../images/icons/download.png" alt="Download button">
+                    <img src="../images/icons/upload.png" alt="Upload button">
+                </div>
+
+                <div class="container-button copy-etc">
+                    <img src="../images/icons/copy.png" alt="Copy button">
+                    <img src="../images/icons/cut.png" alt="Cut button">
+                    <img src="../images/icons/paste.png" alt="Paste button">
+                    <img src="../images/icons/trash.png" alt="Trash button">
+                </div>
+
+                <div class="container-button filter">
+                    <img src="../images/icons/filter.png" alt="Filter button">
+                    <img src="../images/icons/undo-filter.png" alt="Undo filter button">
+                </div>
+
+                <div class="container-button navigator-search">
+                    <img src="../images/icons/write.png" alt="Write button">
+                    <img src="../images/icons/search.png" alt="Search button">
+                </div>
+
+                <div class="container-button tables">
+                    <img src="../images/icons/table-1.png" alt="Table button">
+                    <img src="../images/icons/table-2.png" alt="Table button">
+                </div>
+
+                <div class="container-button mail-user">
+                    <img src="../images/icons/user +.png" alt="User + button">
+                    <img src="../images/icons/mail.png" alt="Mail button">
+                </div>
+
+                <div class="container-button settings">
+                    <img src="../images/icons/settings.png" alt="Settings button">
+                    <img src="../images/icons/support.png" alt="Support button">
+                </div>
+            </div>
+
+            <div class="container-path">
+                <div class="path-arrows">
+                    <img src="../images/icons/arrow-left.png" alt="">
+                    <img src="../images/icons/arrow-right.png" alt="">
+                    <img src="../images/icons/caret-down.png" alt="">
+                    <img src="../images/icons/arrow-up.png" alt="">
+                </div>
+
+                <input class="path-input" type="text" disabled />
+                <img src="../images/icons/refresh.png" class="path-input-refresh" />
+
+                <input class="path-search" type="text" />
+                <i class="fas fa-search fa-lg path-search-icon"></i>
+            </div>
+
+            <div class="container-navigator">
+                <div class="navigator-aside">
+                    <ul class="directories">
+                        <li class="root-directory">
+                            Root directory
+                        </li>
+                        <li class="drop-down">
+                            <ul class="deep-dirs">
+                                <li>Directory 1</li>
+                                <li>Directory 2</li>
+                                <li>Directory 3</li>
+                                <li>Directory 4</li>
+                                <li>Directory 5</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="navigator-main">
+                    <div class="filename columns">
+                        <div class="columns-name column-name-1">
+                            <b>Имя файла</b>
+                        </div>
+                        <ul>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="creating-date columns">
+                        <div class="columns-name column-name-2">
+                            <b>Дата создания</b>
+                        </div>
+                        <ul>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="filetype columns">
+                        <div class="columns-name column-name-3">
+                            <b>Тип</b>
+                        </div>
+                        <ul>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="user columns">
+                        <div class="columns-name column-name-4">
+                            <b>Имя пользователя</b>
+                        </div>
+                        <ul>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <footer class="filesystem-footer">
+        <nav class="filesystem-footer-links">
+            <a>Форум</a>
+            <a>Про нас</a>
+            <a>Обратная связь</a>
+            <a>Для инвесторов</a>
+            <a>Краудфандинг</a>
+        </nav>
+
+        <div class="social-links">
+            <div class="soc-link linkedin">
+                <i class="fab fa-linkedin fa-lg"></i>
+            </div>
+
+            <div class="soc-link telegram">
+                <i class="fab fa-telegram-plane fa-lg"></i>
+            </div>
+
+            <div class="soc-link twitter">
+                <i class="fab fa-twitter fa-lg"></i>
+            </div>
+
+            <div class="soc-link instagram">
+                <i class="fab fa-instagram fa-lg"></i>
+            </div>
+
+            <div class="soc-link facebook">
+                <i class="fab fa-facebook fa-lg"></i>
+            </div>
+
+            <div class="soc-link google-plus">
+                <i class="fab fa-google-plus-g fa-lg"></i>
+            </div>
+
+            <div class="soc-link youtube">
+                <i class="fab fa-youtube fa-lg"></i>
+            </div>
+        </div>
+    </footer>
+    <script src="../src/navigator.js"></script>
+</body>
+
+</html>

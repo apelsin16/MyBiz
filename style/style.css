@@ -5,6 +5,12 @@
   font-weight: 400;
   src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
 }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
 .landing-header {
   height: 1em;
   background-color: #009DD6;
@@ -36,6 +42,7 @@ aside form {
 aside form label,
 aside form input {
   margin-bottom: 1em;
+  outline: none;
 }
 aside form input {
   border-radius: 1em;
@@ -88,6 +95,10 @@ aside .crowdfunding {
   text-align: center;
   vertical-align: middle;
 }
+aside .crowdfunding img {
+  width: 35%;
+  margin-right: 0.7em;
+}
 .landing-section {
   height: 98%;
   width: 77.5%;
@@ -134,7 +145,31 @@ aside .crowdfunding {
   align-items: center;
   height: 5em;
   width: 100%;
-  background-color: #009DD6;
+  background-color: #f5f5f5;
+}
+.filesystem-header .filesystem-search input {
+  padding-left: 0.5em;
+  border-radius: 1em;
+  outline: none;
+}
+.filesystem-header .filesystem-search .fa-search {
+  position: relative;
+  top: 0.1em;
+  right: 1.7em;
+  transition-property: color;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.filesystem-header .filesystem-search .fa-search:hover {
+  color: #009DD6;
+}
+.filesystem-header .filesystem-expand {
+  transition-property: color;
+  transition-duration: 0.5s;
+}
+.filesystem-header .filesystem-expand:hover {
+  color: #009DD6;
+  cursor: pointer;
 }
 .filesystem-logo {
   display: flex;
@@ -142,7 +177,6 @@ aside .crowdfunding {
   justify-content: space-around;
   align-items: center;
   height: 80%;
-  width: 10%;
 }
 .filesystem-logo img {
   height: 100%;
@@ -156,14 +190,30 @@ aside .crowdfunding {
   justify-content: space-around;
   align-items: center;
   height: 80%;
-  width: 30%;
   cursor: pointer;
-}
-.filesystem-header-buttons a {
-  font-size: 1.1em;
 }
 .filesystem-header-buttons i {
   padding-left: 0.6em;
+}
+.filesystem-header-buttons .header-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  font-size: 1.3em;
+  overflow: hidden;
+  transition-property: color, border-color;
+  transition-duration: 0.5s;
+}
+.filesystem-header-buttons .header-buttons a {
+  padding-left: 0.5em;
+  font-family: "Roboto", sans-serif;
+  color: black;
+  text-decoration: none;
+}
+.filesystem-header-buttons .header-buttons:hover {
+  color: #009DD6;
 }
 .filesystem-profile {
   display: flex;
@@ -171,7 +221,6 @@ aside .crowdfunding {
   justify-content: space-between;
   align-items: center;
   height: 80%;
-  width: 12%;
 }
 .filesystem-profile .profile-buttons {
   display: flex;
@@ -180,30 +229,36 @@ aside .crowdfunding {
   align-items: center;
   height: 100%;
   width: 10%;
+  margin-right: 1em;
 }
 .filesystem-profile .profile-buttons i {
   padding: 0.2em;
   border: 2px solid black;
   border-radius: 0.5em;
   cursor: pointer;
+  transition-property: color, border-color;
+  transition-duration: 0.5s;
 }
 .filesystem-profile .profile-buttons i:hover {
-  color: white;
-  border-color: white;
+  color: #009DD6;
+  border-color: #009DD6;
 }
 .filesystem-profile > i:first-of-type {
   border: 2px solid black;
   border-radius: 1em;
   padding: 0.2em;
 }
+.profile-number {
+  padding-right: 1em;
+}
 .filesystem-section {
   height: 85vh;
   width: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
 .filesystem-section .filesystem-tabs {
   margin: 0 auto;
-  height: 4em;
+  height: 4.5em;
   width: 99%;
   display: flex;
   flex-direction: row;
@@ -216,32 +271,34 @@ aside .crowdfunding {
   margin-right: 0.4em;
   padding: 1.1em 1em 0.8em;
   overflow: hidden;
-  background-color: white;
-  border: 1px solid black;
+  background-color: #dee1e6;
 }
 .filesystem-section .filesystem-tabs .tab img,
 .filesystem-section .filesystem-tabs .tab span {
   text-align: center;
   margin-left: 1.5em;
 }
+.filesystem-section .filesystem-tabs .active {
+  background-color: white;
+}
 .filesystem-section .filesystem-container {
-  height: 100%;
-  overflow: hidden;
+  height: 79.9%;
 }
 .filesystem-section .filesystem-container .container-buttons {
   height: 4em;
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   background-color: #edeef1;
 }
 .filesystem-section .filesystem-container .container-buttons .container-button {
   cursor: pointer;
+  margin-left: 3%;
 }
-.filesystem-section .filesystem-container .container-buttons .container-button i:hover {
-  color: #009DD6;
+.filesystem-section .filesystem-container .container-buttons .settings {
+  margin-left: 30%;
 }
 .filesystem-section .filesystem-container .container-path {
   height: 3em;
@@ -250,31 +307,159 @@ aside .crowdfunding {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 2px dashed black;
+  border-bottom: 2px solid #edeef1;
+}
+.filesystem-section .filesystem-container .container-path .path-arrows {
+  width: 5%;
+  margin: 0 2%;
+  text-align: center;
+  cursor: pointer;
+}
+.filesystem-section .filesystem-container .container-path .path-arrows img {
+  height: 1.5em;
+  width: auto;
+}
+.filesystem-section .filesystem-container .container-path .path-arrows img:nth-child(3) {
+  height: 0.5em;
+  width: auto;
+  margin-bottom: 0.5em;
+}
+.filesystem-section .filesystem-container .container-path .path-arrows img::nth-child(4) {
+  height: 2em;
+  width: auto;
+}
+.filesystem-section .filesystem-container .container-path .path-input {
+  width: 65%;
+}
+.filesystem-section .filesystem-container .container-path .path-input-refresh {
+  height: 1.5em;
+  width: auto;
+  position: relative;
+  right: 7%;
+  cursor: pointer;
+}
+.filesystem-section .filesystem-container .container-path .path-search {
+  width: 15%;
+}
+.filesystem-section .filesystem-container .container-path .path-input,
+.filesystem-section .filesystem-container .container-path .path-search {
+  margin-right: 5%;
+  outline: none;
+  border-radius: 1em;
+}
+.filesystem-section .filesystem-container .container-path .path-search-icon {
+  position: relative;
+  right: 6.5em;
+  transition-property: color;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.filesystem-section .filesystem-container .container-path .path-search-icon:hover {
+  color: #009DD6;
 }
 .filesystem-section .filesystem-container .container-navigator {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  height: 80%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
   flex-wrap: nowrap;
+  background-color: #edeef1;
 }
 .filesystem-section .filesystem-container .container-navigator .navigator-aside {
   width: 20%;
-  margin: 0 0 0 3%;
+  margin: 0 1%;
+}
+.filesystem-section .filesystem-container .container-navigator .navigator-aside .root-directory {
+  font-size: 1.5em;
+}
+.filesystem-section .filesystem-container .container-navigator .navigator-aside .root-directory:before {
+  content: url("../images/icons/directory-icon.png");
+  position: relative;
+  top: 0.5em;
+}
+.filesystem-section .filesystem-container .container-navigator .navigator-aside li {
+  font-size: 1.1em;
+}
+.filesystem-section .filesystem-container .container-navigator .navigator-aside .deep-dirs > li {
+  margin-left: 0.1em;
+  padding: 0 0 0 1em;
+  cursor: pointer;
+}
+.filesystem-section .filesystem-container .container-navigator .navigator-aside .deep-dirs > li:hover {
+  color: #009DD6;
+}
+.filesystem-section .filesystem-container .container-navigator .navigator-aside .deep-dirs > li:before {
+  content: url("../images/icons/directory-icon.png");
+  position: relative;
+  top: 0.5em;
 }
 .filesystem-section .filesystem-container .container-navigator .navigator-main {
-  width: 70%;
-  margin: 0 3% 0 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 77%;
 }
 .filesystem-section .filesystem-container .container-navigator .navigator-aside,
 .filesystem-section .filesystem-container .container-navigator .navigator-main {
-  height: 90%;
+  height: 97%;
+  margin-top: 0.5%;
   padding: 1em 3em;
   border-radius: 1em;
   overflow: auto;
-  background-color: beige;
+  background-color: white;
+}
+.filesystem-section .filesystem-container .container-navigator .navigator-aside .filename,
+.filesystem-section .filesystem-container .container-navigator .navigator-main .filename {
+  width: 40%;
+}
+.filesystem-section .filesystem-container .container-navigator .navigator-aside .filetype,
+.filesystem-section .filesystem-container .container-navigator .navigator-main .filetype {
+  width: 25%;
+}
+.filesystem-section .filesystem-container .container-navigator .navigator-aside .user,
+.filesystem-section .filesystem-container .container-navigator .navigator-main .user {
+  width: 30%;
+}
+.filesystem-section .filesystem-container .container-navigator .navigator-aside .filename li,
+.filesystem-section .filesystem-container .container-navigator .navigator-main .filename li,
+.filesystem-section .filesystem-container .container-navigator .navigator-aside .creating-date li,
+.filesystem-section .filesystem-container .container-navigator .navigator-main .creating-date li,
+.filesystem-section .filesystem-container .container-navigator .navigator-aside .filetype li,
+.filesystem-section .filesystem-container .container-navigator .navigator-main .filetype li,
+.filesystem-section .filesystem-container .container-navigator .navigator-aside .user li,
+.filesystem-section .filesystem-container .container-navigator .navigator-main .user li {
+  text-align: center;
+  font-size: 1.2em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  margin-bottom: 0.2em;
+}
+.filesystem-section .filesystem-container .container-navigator .navigator-aside .filename li,
+.filesystem-section .filesystem-container .container-navigator .navigator-main .filename li {
+  text-align: left;
+  padding-left: 3em;
+}
+.filesystem-section .filesystem-container .container-navigator .navigator-aside .columns,
+.filesystem-section .filesystem-container .container-navigator .navigator-main .columns {
+  height: 100%;
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
+}
+.filesystem-section .filesystem-container .container-navigator .navigator-aside .columns:last-child,
+.filesystem-section .filesystem-container .container-navigator .navigator-main .columns:last-child {
+  border-right: none;
+}
+.filesystem-section .filesystem-container .container-navigator .navigator-aside .columns-name,
+.filesystem-section .filesystem-container .container-navigator .navigator-main .columns-name {
+  height: 3em;
+  padding-top: 0.5em;
+  margin-bottom: 1em;
+  background-color: #dee1e6;
+  text-align: center;
+}
+.filesystem-section .filesystem-container .container-navigator .navigator-aside .columns-name b,
+.filesystem-section .filesystem-container .container-navigator .navigator-main .columns-name b {
+  font-size: 1.2em;
 }
 .filesystem-footer {
   display: flex;
@@ -283,7 +468,8 @@ aside .crowdfunding {
   align-items: center;
   height: 5em;
   width: 100%;
-  border-top: 2px solid black;
+  flex-wrap: wrap;
+  background-color: #f5f5f5;
 }
 .filesystem-footer nav {
   height: 90%;
@@ -295,10 +481,15 @@ aside .crowdfunding {
 }
 .filesystem-footer nav a {
   width: 9em;
-  padding: 0.6em 0.7em 0.6em 0;
+  padding: 0.6em 0.7em 0.6em 0.8em;
   cursor: pointer;
   text-align: center;
-  border-right: 2px solid black;
+  font-size: 1.2em;
+  border-right: 2px solid #5098C3;
+  color: #5098C3;
+}
+.filesystem-footer nav a:hover {
+  color: black;
 }
 .filesystem-footer .social-links {
   height: 90%;
@@ -321,12 +512,196 @@ aside .crowdfunding {
   top: 0.55em;
   color: white;
 }
-.filesystem-footer .social-links .social-links i:before:hover {
-  color: yellow;
-}
 .filesystem-footer .social-links .google-plus i:before,
 .filesystem-footer .social-links .youtube i:before {
   left: 0.3em;
+}
+.hover-background-color {
+  background-color: white !important;
+}
+.hover-color {
+  color: #009DD6 !important;
+}
+.column-name-1 {
+  border-radius: 1em 0 0 1em;
+}
+.column-name-4 {
+  border-radius: 0 1em 1em 0;
+}
+.home-button img {
+  width: 75%;
+}
+.grids img {
+  width: 40%;
+}
+.file-control img {
+  width: 30%;
+}
+.file-control img:nth-child(2),
+.file-control img:nth-child(3) {
+  width: 25%;
+}
+.copy-etc img {
+  width: 20%;
+}
+.copy-etc img:nth-child(4) {
+  width: 15%;
+}
+.filter img {
+  width: 40%;
+}
+.navigator-search img {
+  width: 34%;
+}
+.tables img {
+  width: 40%;
+}
+.mail-user img {
+  width: 40%;
+}
+.register-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 5em;
+  width: 100%;
+  padding-left: 5%;
+  background-color: #009DD6;
+}
+input:not([type="file"]) {
+  caret-color: #009DD6;
+  border-color: #0abeff;
+  border-style: solid;
+  outline: none;
+  transition-delay: 0.05s;
+  transition-duration: 0.3s;
+  transition-property: border-color;
+  cursor: pointer;
+}
+input:not([type="file"]):hover {
+  border-color: #009DD6;
+}
+input:not([type="file"]):focus {
+  border-color: #00b0f0;
+}
+.register-section {
+  min-height: 85vh;
+  width: 100%;
+}
+.register-section .register-main-heading {
+  margin: 1em 0;
+  text-align: center;
+  font-size: 2em;
+  font-family: "Montserrat", sans-serif;
+  color: #009DD6;
+}
+.register-section .register-main-inputs {
+  height: 5em;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+}
+.register-section .register-comment {
+  text-align: center;
+}
+.register-section .register-password-create {
+  height: 5em;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+}
+.register-section .register-captcha-block {
+  text-align: center;
+}
+.register-section .register-optional-fields {
+  height: 3em;
+  margin-top: 2em;
+  text-align: center;
+  background-color: #009DD6;
+}
+.register-section .register-optional-fields h2 {
+  padding-top: 0.5em;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+}
+.register-section .register-optional-inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.register-section .register-optional-inputs div {
+  margin: 2em 0;
+}
+.register-section .register-optional-inputs .optional-input-number,
+.register-section .register-optional-inputs .optional-input-email {
+  width: 50%;
+  text-align: center;
+}
+.register-section .register-optional-inputs .pickers {
+  width: 100%;
+  text-align: center;
+}
+.register-section .register-optional-inputs .optional-image-pick {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.register-section .register-optional-inputs .optional-image-pick div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 5em;
+}
+.register-section .register-optional-inputs .optional-image-pick .optional-image {
+  height: 15em;
+}
+.register-section .register-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0;
+}
+.register-section .register-buttons button {
+  padding: 0.5em 1%;
+  color: #00b0f0;
+  border: 2px solid #00b0f0;
+  border-radius: 1em;
+  text-align: center;
+  font-size: 1.4em;
+  font-weight: bold;
+  background-color: white;
+  transition-duration: 0.5s;
+  transition-delay: 0.1s;
+  transition-property: border-color, color;
+  cursor: pointer;
+}
+.register-section .register-buttons button:hover {
+  color: #009DD6;
+  border-color: #009DD6;
+}
+.register-section .register-buttons button:first-child {
+  margin: 0 5em 0 0;
+}
+.register-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 5em;
+  width: 100%;
+  flex-wrap: wrap;
+  background-color: #f5f5f5;
 }
 .pointer {
   cursor: pointer;
@@ -347,6 +722,9 @@ button {
 span,
 label {
   font-size: 1.3em;
+}
+b {
+  font-weight: bold;
 }
 ::-webkit-scrollbar {
   /* Here is style for vertical scrollbar */
